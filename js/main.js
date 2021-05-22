@@ -1,7 +1,7 @@
-/* var but = document.querySelector(".gitBut");
-var iconShow = document.querySelector(".content");
-var iconLeft = document.querySelector(".content i:first-child");
-var iconRight = document.querySelector(".content i:last-child");
+var but = document.querySelector(".gitBut");
+var iconShow = document.querySelector(".content .textAndIcon");
+var iconLeft = document.querySelector(".content .textAndIcon i:first-child");
+var iconRight = document.querySelector(".content .textAndIcon i:last-child");
 
 
 
@@ -16,7 +16,7 @@ but.onmouseout = function() {
 
 };
 
-iconShow.onmouseover = function() {
+/* iconShow.onmouseover = function() {
 
     iconLeft.className = "icon-angle-left show";
     iconRight.className = "icon-angle-right show";
