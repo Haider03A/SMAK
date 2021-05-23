@@ -13,7 +13,6 @@ body {
 header {
   height: 92px;
   width: 100%;
-  background-color: rgba(19, 19, 22, 0.26);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,48 +30,77 @@ header {
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   position: fixed;
-}
-
-header .conteLogo {
-  width: 20%;
+  background-color: #00000087;
+  z-index: 100;
 }
 
 header .conteLogo .logo {
   height: 50px;
 }
 
+header i {
+  color: #c3c3c3;
+  font-size: 38px;
+  display: none;
+  cursor: pointer;
+}
+
 header .nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 80%;
+  display: block;
+  overflow: hidden;
 }
 
 header .nav .active a {
-  color: #ffe600;
+  color: #eac335;
 }
 
 header .nav li {
   list-style-type: none;
+  float: left;
 }
 
 header .nav li a {
   padding-left: 20px;
   text-decoration: none;
   font-weight: normal;
-  color: #fff;
+  color: #ffffffd1;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+header .nav li a:hover {
+  color: #eac335;
+}
+
+@media (max-width: 768px) {
+  header .nav {
+    position: absolute;
+    right: 1000px;
+    top: 92px;
+    width: 100%;
+    background-color: #f7f7f7;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    /* display: none; */
+  }
+  header .nav li {
+    float: none;
+  }
+  header .nav li a {
+    display: block;
+    padding: 15px 30px;
+    color: #00000087;
+  }
+  header .nav li a:hover {
+    padding: 15px 35px;
+  }
+  header .show {
+    /* display: block; */
+    right: 0px;
+  }
+  header i {
+    display: block;
+  }
 }
 
 .home {
@@ -190,5 +218,14 @@ header .nav li a {
 
 .home .content .textAndIcon:hover i {
   display: block;
+}
+
+@media (max-width: 768px) {
+  .home .content .textAndIcon .text {
+    padding: 0px;
+  }
+  .home .content .textAndIcon .text p {
+    font-size: 3em;
+  }
 }
 /*# sourceMappingURL=style.css.map */

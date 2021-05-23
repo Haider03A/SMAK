@@ -1,9 +1,9 @@
-var but = document.querySelector(".gitBut");
-var iconShow = document.querySelector(".content .textAndIcon");
-var iconLeft = document.querySelector(".content .textAndIcon i:first-child");
-var iconRight = document.querySelector(".content .textAndIcon i:last-child");
-
-
+var but = document.querySelector(".gitBut"),
+    iconShow = document.querySelector(".content .textAndIcon"),
+    iconLeft = document.querySelector(".content .textAndIcon i:first-child"),
+    iconRight = document.querySelector(".content .textAndIcon i:last-child"),
+    bergherIcon = document.querySelector("header .icon"),
+    showNav = document.querySelector("header .nav");
 
 but.onmouseover = function() {
 
@@ -27,3 +27,7 @@ iconShow.onmouseout = function() {
     iconRight.className = "icon-angle-right";
 
 }; */
+
+bergherIcon.onclick = function() {
+    showNav.classList.toggle("show");
+};
