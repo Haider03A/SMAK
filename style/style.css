@@ -33,7 +33,6 @@ header i {
     color: #c3c3c3;
     font-size: 38px;
     display: none;
-    transition: all .3s;
     z-index: 100;
 }
 
@@ -124,27 +123,25 @@ header .nav li a:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    padding: 20px;
+    padding: 0px 20px;
     font-size: 3em;
     color: #ccc;
     cursor: pointer;
     transition: all .3s;
+    display: none;
+    
 }
 
-.home .content .textAndIcon .moveLeft {
-    left: -200px;
-}
-
-.home .content .textAndIcon .moveRight {
-    right: -200px;
-}
-
-.home .content .textAndIcon .showLeft {
+.home .content .textAndIcon i:first-child {
     left: 0px;
 }
 
-.home .content .textAndIcon .showRight {
+.home .content .textAndIcon i:last-child {
     right: 0px;
+}
+
+.home .content .textAndIcon .show {
+    display: block;
 }
 
 .home .content .textAndIcon .text {
