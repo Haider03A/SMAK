@@ -225,7 +225,7 @@ header .nav li a:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0px 246px;
+        margin: 0px 100px;
         padding: 0px 15px 50px;
         .up {
             display: flex;
@@ -272,7 +272,7 @@ header .nav li a:hover {
                 margin: 11px 0px;
             }
             p:last-child {
-                margin: 0px 114px;
+                margin: 0px 40px;
                 text-align: center;
             }
         }
@@ -320,14 +320,29 @@ header .nav li a:hover {
     }
 }
 
+@media (max-width: 992px) {
+    .services {
+        .conte {
+            margin: 0px 75px;
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .services {
         .conte {
             margin: 0px 20px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .services {
+        .conte {
             .up {
                 p:last-child {
-                    margin: 0px;
-                    width: 100%;
+                    margin: 0px 10px;
+                    font-size: 13px;
                 }
             }
         }
