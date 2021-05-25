@@ -4,10 +4,12 @@ html {
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: sans-serif;
+  padding-bottom: 10000px;
 }
 
 /* Start Header */
@@ -386,7 +388,7 @@ header .nav li a:hover {
 
 .services .conte .down div p {
   text-align: center;
-  padding: 0px 0px 10px;
+  padding: 0px 0px 20px;
   color: #707070;
 }
 
