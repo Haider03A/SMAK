@@ -250,6 +250,21 @@ header .nav li a:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.services .conte .contener {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -257,7 +272,7 @@ header .nav li a:hover {
   padding: 0px 15px 50px;
 }
 
-.services .conte .up {
+.services .conte .contener .up {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -276,7 +291,7 @@ header .nav li a:hover {
   position: relative;
 }
 
-.services .conte .up span:first-child {
+.services .conte .contener .up span:first-child {
   position: absolute;
   width: 60px;
   height: 60px;
@@ -285,7 +300,7 @@ header .nav li a:hover {
   display: block;
 }
 
-.services .conte .up span:first-child a i {
+.services .conte .contener .up span:first-child a i {
   font-size: 37px;
   position: absolute;
   top: 50%;
@@ -295,20 +310,20 @@ header .nav li a:hover {
   color: #fff;
 }
 
-.services .conte .up p {
+.services .conte .contener .up p {
   color: #707070;
   text-align: center;
   font-size: 16px;
 }
 
-.services .conte .up h1 {
+.services .conte .contener .up h1 {
   font-size: 30px;
   padding: 20px 0px 10px;
   font-family: sans-serif;
   text-align: center;
 }
 
-.services .conte .up span:nth-child(4) {
+.services .conte .contener .up span:nth-child(4) {
   display: block;
   width: 170px;
   height: 2px;
@@ -316,12 +331,12 @@ header .nav li a:hover {
   margin: 11px 0px;
 }
 
-.services .conte .up p:last-child {
+.services .conte .contener .up p:last-child {
   margin: 0px 40px;
   text-align: center;
 }
 
-.services .conte .down {
+.services .conte .contener .mid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -339,7 +354,7 @@ header .nav li a:hover {
           align-items: baseline;
 }
 
-.services .conte .down div {
+.services .conte .contener .mid div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -357,12 +372,11 @@ header .nav li a:hover {
   width: 250px;
 }
 
-.services .conte .down div span {
+.services .conte .contener .mid div span {
   width: 105px;
   height: 105px;
   background-color: #FFCF03;
   border-radius: 50%;
-  display: block;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -374,22 +388,113 @@ header .nav li a:hover {
           align-items: center;
 }
 
-.services .conte .down div span i {
+.services .conte .contener .mid div span i {
   font-size: 3em;
   color: #fff;
 }
 
-.services .conte .down div h2 {
+.services .conte .contener .mid div h2 {
   padding: 20px 10px;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
 }
 
-.services .conte .down div p {
+.services .conte .contener .mid div p {
   text-align: center;
   padding: 0px 0px 20px;
   color: #707070;
+}
+
+.services .conte .down {
+  padding: 0px 0px 50px;
+}
+
+.services .conte .down .text {
+  margin: 50px 0px;
+}
+
+.services .conte .down .text h3 {
+  text-align: center;
+  padding: 20px 0px 10px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.services .conte .down .text p {
+  text-align: center;
+  margin: 0px 40px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.services .conte .down .iconText {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  max-width: 1000px;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.services .conte .down .iconText div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0px 20px;
+  width: 250px;
+}
+
+.services .conte .down .iconText div span {
+  width: 105px;
+  height: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.services .conte .down .iconText div span i {
+  font-size: 3em;
+  color: #FFCF03;
+}
+
+.services .conte .down .iconText div h2 {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.services .conte .down .iconText div p {
+  text-align: center;
+  padding: 0px 0px 20px;
+  color: #fff;
 }
 
 @media (max-width: 992px) {
