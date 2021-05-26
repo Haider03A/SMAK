@@ -322,7 +322,6 @@ header .nav li a:hover {
 .services .up .services-up div {
     text-align: center;
     padding: 0px 20px;
-    width: 25%;
 }
 
 .services .up .services-up div .icon {
@@ -403,7 +402,6 @@ header .nav li a:hover {
 }
 
 .services .down .contener .services-down div {
-    width: 25%;
     padding: 0px 20px;
     text-align: center;
 }
