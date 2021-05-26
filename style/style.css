@@ -10,6 +10,7 @@ html {
 body {
     font-family: sans-serif;
     line-height: 1.428571429;
+    overflow: hidden; 
 }
 
 
