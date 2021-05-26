@@ -10,7 +10,7 @@ html {
 body {
     font-family: sans-serif;
     line-height: 1.428571429;
-    overflow: hidden; 
+    
 }
 
 
@@ -247,6 +247,10 @@ header .nav li a:hover {
 
 
 /* Start Services */
+
+.services {
+    overflow: hidden;
+}
 
 .services .up .contener {
     padding: 0px 15px 50px;
