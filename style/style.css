@@ -10,7 +10,6 @@ html {
 body {
     font-family: sans-serif;
     line-height: 1.428571429;
-    
 }
 
 
@@ -329,6 +328,36 @@ header .nav li a:hover {
     padding: 0px 20px;
 }
 
+@media (min-width: 768px) {
+    .services .up .services-up {
+        width: 100%;
+        margin: 0px auto;
+    }
+    .services .up .services-up div {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .services .up .services-up {
+        max-width: 1000px;
+        margin: 0px auto;
+    }
+    .services .up .services-up div {
+        width: 25%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .services .up .services-up {
+        max-width: 1500px;
+        margin: 0px auto;
+    }
+    .services .up .services-up div {
+        width: 16.66666666666667%;
+    }
+}
+
 .services .up .services-up div .icon {
     display: block;
     width: 105px;
@@ -403,12 +432,42 @@ header .nav li a:hover {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
 }
 
 .services .down .contener .services-down div {
     padding: 0px 20px;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .services .down .contener .services-down {
+        width: 100%;
+        margin: 0px auto;
+    }
+    .services .down .contener .services-down div {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .services .down .contener .services-down {
+        max-width: 1000px;
+        margin: 0px auto;
+    }
+    .services .down .contener .services-down div {
+        width: 25%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .services .down .contener .services-down {
+        max-width: 1500px;
+        margin: 0px auto;
+    }
+    .services .down .contener .services-down div {
+        width: 16.66666666666667%;
+    }
 }
 
 .services .down .contener .services-down div .icon i {
@@ -608,9 +667,11 @@ header .nav li a:hover {
     color: #fff;
 } */
 
-@media (max-width: 992px) {}
+@media (min-width: 1200px) {}
 
-@media (max-width: 768px) {}
+@media (min-width: 992px) {}
+
+@media (min-width: 768px) {}
 
 @media (max-width: 576px) {}
 
