@@ -4,23 +4,31 @@ const but = document.querySelector(".gitBut"),
     disBlock = document.querySelectorAll(".textAndIcon i:first-child, .textAndIcon i:last-child"),
     bergherIcon = document.querySelector("header .berger-icon"),
     showNav = document.querySelector("header .nav"),
-    links = document.querySelectorAll("header .nav li");
+    links = document.querySelectorAll("header .nav li"),
+    clickDiscrpt = document.querySelector('.the-team .contener .conten-and-img .content'),
+    discrpt = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript'),
+    clickExitIcon = document.querySelector('.the-team .contener .conten-and-img .content .descript .exit-icon');
+
 
 bergherIcon.onclick = function() {
 
     showNav.classList.toggle('show');
     bergherIcon.classList.toggle('berger-toggle');
 
-    links.forEach((links, index) => {
-        if (links.style.animation) {
-            links.style.animation = '';
+    links.forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = '';
         } else {
-            links.style.animation = `link-move .5s ease forwards ${index / 7}s`;
+            link.style.animation = `link-move .5s ease forwards ${index / 7}s`;
         }
     });
 
 
 };
+
+links.forEach(activeLink => {
+
+});
 
 but.onmouseover = function() {
         but.classList.add("borderDisplay");
@@ -47,3 +55,10 @@ butDonw.onmouseover = function() {
 butDonw.onmouseout = function() {
     butDonw.classList.remove("border-down");
 };
+
+/* discrpt.forEach(i => {
+    i.addEventListener('click', function () {
+        discrpt.forEach(f => f.classList.remove('show'));
+        this.classList.add('show');
+    });
+}); */
