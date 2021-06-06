@@ -15,7 +15,7 @@ bergherIcon.onclick = function() {
         if (links.style.animation) {
             links.style.animation = '';
         } else {
-            links.style.animation = `link-move 500ms ${index / 7 + 0.5}s`;
+            links.style.animation = `link-move .5s ease forwards ${index / 7}s`;
         }
     });
 
