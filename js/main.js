@@ -5,9 +5,9 @@ const but = document.querySelector(".gitBut"),
     bergherIcon = document.querySelector("header .berger-icon"),
     showNav = document.querySelector("header .nav"),
     links = document.querySelectorAll("header .nav li"),
-    clickDiscrpt = document.querySelector('.the-team .contener .conten-and-img .content'),
+    clickToShowDisc = document.querySelectorAll('.the-team .contener .conten-and-img .content .nema'),
     discrpt = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript'),
-    clickExitIcon = document.querySelector('.the-team .contener .conten-and-img .content .descript .exit-icon');
+    clickExitIcon = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript .exit-icon');
 
 
 bergherIcon.onclick = function() {
@@ -28,6 +28,15 @@ bergherIcon.onclick = function() {
 
 links.forEach(activeLink => {
 
+    activeLink.addEventListener('click', (e) => {
+        let reEle = activeLink.parentElement.querySelectorAll('header .nav li');
+        reEle.forEach(re => {
+            re.classList.remove('active');
+            /* console.log(re) */
+        });
+
+        e.target.parentElement.classList.add('active');
+    });
 });
 
 but.onmouseover = function() {
@@ -56,9 +65,22 @@ butDonw.onmouseout = function() {
     butDonw.classList.remove("border-down");
 };
 
-/* discrpt.forEach(i => {
-    i.addEventListener('click', function () {
-        discrpt.forEach(f => f.classList.remove('show'));
-        this.classList.add('show');
+clickToShowDisc.forEach(clickDisc => {
+    clickDisc.addEventListener('click', (e) => {
+        clickDisc.classList.add('after')
+        let elmeDisc = e.target.parentElement.lastElementChild;
+        elmeDisc.classList.add('show');
     });
-}); */
+});
+
+clickExitIcon.forEach(clickExit => {
+    clickExit.addEventListener('click', (e) => {
+        let reAfter = document.querySelectorAll('.the-team .contener .conten-and-img .content .nema');
+        reAfter.forEach(after => {
+            after.classList.remove('after');
+        });
+
+        let reDisc = clickExit.parentElement;
+        reDisc.classList.remove('show');
+    });
+});
