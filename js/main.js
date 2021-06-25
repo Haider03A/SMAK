@@ -233,18 +233,31 @@ theButton.forEach(i => {
     });
 });
 // End We Keep
-
+// Start Input
 const input = document.querySelectorAll('.contact .the-form .contener .forms .up input');
 input.forEach(i => {
     i.addEventListener('click', (e) => {
         input.forEach(ii => {
-            ii.parentElement.firstElementChild.style = null;
-            i.setAttribute('placeholder', `${i.script.setAttribute('data-name')}`)
+            if(ii !== ' '){
+            
+            } else {
+                ii.parentElement.firstElementChild.sty
+            ii.setAttribute('placeholder', `${ii.getAttribute('data-name')}`);
+            }
         });
-        if (i === document.activeElement) {
+        if (i === document.activeElement || i !== '') {
             i.setAttribute('placeholder', '')
             i.parentElement.firstElementChild.style.opacity = '1';
-            i.parentElement.firstElementChild.style.transform = 'translateY(-37px)';;
+            i.parentElement.firstElementChild.style.transform = 'translateY(-37px)';
         }
     });
+    input.forEach(iii =>{
+        addEventListener('click', (ee) =>{
+            if (iii !== document.activeElement) {
+                iii.parentElement.firstElementChild.style = null;
+                iii.setAttribute('placeholder', `${iii.getAttribute('data-name')}`);
+            }
+        });
+    });
 });
+// End Input
