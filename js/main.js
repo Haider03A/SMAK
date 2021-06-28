@@ -204,7 +204,14 @@ function span4Func() {
     };
 };
 // End About Skills
-
+// Start Our Clients
+const logosMoveing = document.querySelector('.clients .contener .down .logos'),
+    logosMoveLeft = document.querySelector('.clients .contener .down .clikes .move-to-left'),
+    logosMoveRigth = document.querySelector('.clients .contener .down .clikes .move-to-right');
+logosMoveLeft.addEventListener('click', (e) => {
+    logosMoveing.style.transform = `translateX(${50}px)`;
+});
+// End Our Clients
 // Start We Keep
 const theText = document.querySelectorAll('.clients .we-keep .contener .content-texts .the-text'),
     theButton = document.querySelectorAll('.clients .we-keep .contener .the-circle span');
@@ -238,22 +245,52 @@ const input = document.querySelectorAll('.contact .the-form .contener .forms .up
 input.forEach(i => {
     i.addEventListener('click', (e) => {
         input.forEach(ii => {
-            if(ii !== ' '){
-            
+            if (ii !== ' ') {
+
             } else {
-                ii.parentElement.firstElementChild.sty
-            ii.setAttribute('placeholder', `${ii.getAttribute('data-name')}`);
+                ii.setAttribute('placeholder', `${ii.getAttribute('data-name')}`);
+            }
+        });
+        if (i === document.activeElement || i !== '') {
+            i.classList.add('focus');
+            i.setAttribute('placeholder', '')
+            i.parentElement.firstElementChild.style.opacity = '1';
+            i.parentElement.firstElementChild.style.transform = 'translateY(-33px)';
+
+        }
+    });
+    input.forEach(iii => {
+        addEventListener('click', (ee) => {
+            if (iii !== document.activeElement) {
+                iii.classList.remove('focus');
+                iii.parentElement.firstElementChild.style = null;
+                iii.setAttribute('placeholder', `${iii.getAttribute('data-name')}`);
+            }
+        });
+    });
+});
+
+const textarea = document.querySelectorAll('.contact .the-form .contener .forms .down textarea');
+textarea.forEach(i => {
+    i.addEventListener('click', (e) => {
+        textarea.forEach(ii => {
+            if (ii !== ' ') {
+
+            } else {
+                ii.setAttribute('placeholder', `${ii.getAttribute('data-name')}`);
             }
         });
         if (i === document.activeElement || i !== '') {
             i.setAttribute('placeholder', '')
+            i.classList.add('focus')
             i.parentElement.firstElementChild.style.opacity = '1';
-            i.parentElement.firstElementChild.style.transform = 'translateY(-37px)';
+            i.parentElement.firstElementChild.style.transform = 'translateY(-33px)';
         }
     });
-    input.forEach(iii =>{
-        addEventListener('click', (ee) =>{
+    textarea.forEach(iii => {
+        addEventListener('click', (ee) => {
             if (iii !== document.activeElement) {
+                iii.classList.remove('focus')
                 iii.parentElement.firstElementChild.style = null;
                 iii.setAttribute('placeholder', `${iii.getAttribute('data-name')}`);
             }
