@@ -1,13 +1,4 @@
-    /*
-@media (max-width: 576px) {}
-
-@media (min-width: 768px) {}
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}
-*/
-    /* Start Medie All */
+/* Start Medie All */
     
     .contener {
         margin-left: auto;
@@ -106,6 +97,7 @@
         position: fixed;
         background-color: #00000087;
         z-index: 15;
+        user-select: none;
     }
     
     header .contener {
@@ -255,11 +247,12 @@
         background-size: cover;
         display: flex;
         align-items: center;
+        user-select: none;
     }
     
     .home .content {
         width: 100%;
-        background-image: url(../images/a/patern.png);
+        background-image: url('../images/a/patern.png');
         overflow: hidden;
     }
     
@@ -348,6 +341,10 @@
     }
     /* End Home */
     /* Start Services */
+
+    .services .up {
+        user-select: none;
+    }
     
     .services .up .contener {
         padding-bottom: 50px;
@@ -486,7 +483,7 @@
     
     .services .down .bag-down div {
         position: absolute;
-        background: url(../images/a/how-we-do-it.jpg) black;
+        background: url('../images/a/how-we-do-it.jpg') black;
         background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
@@ -496,7 +493,7 @@
     
     .services .down .bag-up div {
         position: absolute;
-        background-image: url(../images/a/patern.png);
+        background-image: url('../images/a/patern.png');
         background-repeat: repeat;
         width: 100%;
         height: 100%;
@@ -556,17 +553,18 @@
     }
     /* End Services */
     /* Start Portfolio */
+
+    .portfolio {
+        user-select: none;
+    }
     
     .portfolio .our-references .contener {
         text-align: center;
         position: relative;
-    }
-    
-    .portfolio .our-references .contener {
         padding-top: 50px;
         padding-bottom: 50px;
     }
-    
+
     .portfolio .our-references .contener p {
         font-size: 16px;
         color: #707070;
@@ -739,13 +737,13 @@
     }
     
     .portfolio .we-are-proud .bag-down {
-        background: url('/images/a/we-are-proud.jpg');
+        background: url('../images/a/we-are.jpg');
         background-size: cover;
         background-repeat: no-repeat;
     }
     
     .portfolio .we-are-proud .bag-up {
-        background: url('/images/a/patern.png');
+        background: url("../images/a/patern.png");
     }
     
     .portfolio .we-are-proud .contener .text {
@@ -858,6 +856,7 @@
     
     .about .the-team {
         background-color: #f5f5f5;
+        user-select: none;
     }
     
     .about .the-team .contener {
@@ -1060,13 +1059,13 @@
     }
     
     .about .skills .bg-down {
-        background: url('/images/a/bg03.jpg');
+        background: url('../images/a/bg03.jpg');
         background-size: cover;
         background-repeat: no-repeat;
     }
     
     .about .skills .bg-up {
-        background: url('/images/a/patern.png');
+        background: url('../images/a/patern.png');
         background-repeat: repeat;
     }
     
@@ -1163,6 +1162,11 @@
     }
     /* End About */
     /* Start Clients */
+
+    .clients {
+        user-select: none;
+    }
+
     .clients .contener .text {
         margin-bottom: 50px;
         margin-top: 50px;
@@ -1194,7 +1198,7 @@
         flex-flow: row nowrap;
         justify-content: center;
         align-items: baseline;
-        
+    transition: .3s;        
     }
 
     .clients .contener .down .logos img {
@@ -1240,13 +1244,13 @@
     }
 
     .we-keep .bag-down {
-        background: url('/images/a/bg02.jpg');
+        background: url('../images/a/bg02.jpg');
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     .we-keep .bag-up {
-        background: url('/images/a/patern.png');
+        background: url('../images/a/patern.png');
         background-repeat: repeat;
     }
 
@@ -1361,6 +1365,7 @@
 
     .contact .the-form {
         position: relative;
+        user-select: none;
     }
 
     .contact .the-form .bag-down,
@@ -1375,13 +1380,13 @@
     }
 
     .contact .the-form .bag-down {
-        background: url('/images/a/contact-us.jpg');
+        background-image: url('../images/a/contact-us.jpg');
         background-repeat: no-repeat;
         background-size: cover;
     }
 
     .contact .the-form .bag-up {
-        background: url('/images/a/patern.png');
+        background-image: url('../images/a/patern.png');
         background-repeat: repeat;
     }
 
@@ -1520,3 +1525,69 @@
        
     }
     /* End Contact */
+    /* Start footer */
+    footer {
+        background: #131217;
+    }
+
+    footer .contener {
+        padding-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+    }
+
+    footer .contener p {
+        color: #707070;
+    }
+
+    footer .contener p a {
+        color: #ffe600;
+        text-decoration: none;
+    }
+
+    footer .contener p a:hover {
+        text-decoration: revert;
+    }
+
+    footer .contener .media {
+        display: flex;
+        padding: 10px 0px;  
+    }
+
+    footer .contener .media li {
+        list-style-type: none;   
+        padding: 10px;
+    }
+
+    footer .contener .media li a {
+        text-decoration: none;
+        color: #fff;
+        width: 32px;
+        height: 32px;
+        display: block;
+        text-align: center;
+        transition: .3s;
+    }
+
+    footer .contener .media li .facebook:hover {
+        background: #3E5993;
+    }
+
+    footer .contener .media li .twitter:hover {
+        background: #00C3F8;
+    }
+
+    footer .contener .media li .dribbble:hover {
+        background: #CA366E;
+    }
+
+    footer .contener .media li .youtube:hover {
+        background: #CC181E;
+    }
+
+    footer .contener .media li a i {
+        line-height: 32px;
+    }
+    /* End footer */

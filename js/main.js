@@ -71,6 +71,38 @@ butDonw.onmouseover = function () {
         butDonw.classList.remove("border-down");
     };
 
+// Start We Are Proud
+const contBoxAll = document.querySelectorAll('.portfolio .we-are-proud .contener .box .cont-box h1'),
+    timeContBoxAll = setInterval(funcContBoxAll, 1);
+let numContBox1 = 1000;
+let numContBox2 = 2000;
+let numContBox3 = 1;
+let numContBox4 = 18500;
+
+function funcContBoxAll() {
+    if (numContBox1 === 1600) { } else {
+        numContBox1++;
+        contBoxAll[0].textContent = `${numContBox1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    }
+
+    if (numContBox2 === 3200) { } else {
+        numContBox2++; contBoxAll[1].textContent = `${numContBox2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    }
+
+    if (numContBox3 === 40) { } else {
+        numContBox3++; contBoxAll[2].textContent = `${numContBox3.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    }
+
+    if (numContBox4 === 20000) {
+        clearInterval(timeContBoxAll);
+    } else {
+        numContBox4++; contBoxAll[3].textContent = `${numContBox4.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+    }
+};
+
+// End We Are Proud
+
+// Start The Team
 clickToShowDisc.forEach(clickDisc => {
     clickDisc.addEventListener('click', (e) => {
         let elmeDisc = e.target.parentElement.lastElementChild;
@@ -90,6 +122,7 @@ clickToShowDisc.forEach(clickDisc => {
             reDisc.style.top = '0%';
         });
     });
+// End The Team
 
 // Start About Skills
 /* Circle1 */
@@ -208,8 +241,13 @@ function span4Func() {
 const logosMoveing = document.querySelector('.clients .contener .down .logos'),
     logosMoveLeft = document.querySelector('.clients .contener .down .clikes .move-to-left'),
     logosMoveRigth = document.querySelector('.clients .contener .down .clikes .move-to-right');
+let num = 0,
+    numMove = 250;
 logosMoveLeft.addEventListener('click', (e) => {
-    logosMoveing.style.transform = `translateX(${50}px)`;
+    logosMoveing.style.transform = `translateX(${num += numMove}px)`;
+});
+logosMoveRigth.addEventListener('click', (e) => {
+    logosMoveing.style.transform = `translateX(${num -= numMove}px)`;
 });
 // End Our Clients
 // Start We Keep
