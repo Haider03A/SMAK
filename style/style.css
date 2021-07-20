@@ -590,11 +590,29 @@ header .contener .nav li:hover {
 
 .portfolio .nav-pic .contener .pic div {
     position: relative;
+    transition:  .3s;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.portfolio .nav-pic .contener .pic.show {
+    display: block;
+}
+
+.portfolio .nav-pic .contener .pic.none {
+    display: none;
 }
 
 .portfolio .nav-pic .contener .pic div img {
     width: 100%;
     height: 100%;
+    transition: .3s;
+}
+
+.portfolio .nav-pic .contener .pic div:hover img {
+    transform: scale(1.1);
+    
+
 }
 
 .portfolio .nav-pic .contener .pic div .text {
