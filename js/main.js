@@ -105,19 +105,35 @@ function funcContBoxAll() {
 
 // Start Portfolio
 
-const fliterLinks = document.querySelectorAll('.portfolio .nav-pic .contener .text-playlist li');
+const fliterLinks = document.querySelectorAll('.portfolio .nav-pic .contener .text-playlist li'),
+    pics = document.querySelectorAll('.portfolio .nav-pic .contener .pic > div');
 
+removeClassAllfliter = function () {
+    pics.forEach(pic => {
+        pic.style.display = 'none';
+    });
+};
 
-removeAllfliter = function (fliterLink) {
+addClassAllfliter = function (fliterLink) {
+    let linkDataFliter = fliterLink.getAttribute('data-fliter',);
+    let dataFliterFinish = '';
 
+    if (linkDataFliter == 'all') {
+        dataFliterFinish = 'div';
+    } else {
+        dataFliterFinish = `div[data-fliter="${linkDataFliter}"]`;
+    };
 
-    let pics = document.querySelectorAll(`.portfolio .nav-pic .contener .pic div[data-fliter="${fliterLink.getAttribute('data-fliter',)}"]`);
-    
-}
+    let pics = document.querySelectorAll(`.portfolio .nav-pic .contener .pic > ${dataFliterFinish}`);
+    pics.forEach(pic => {
+        pic.style.display = 'block';
+    });
+};
 
 fliterLinks.forEach(fliterLink => {
     fliterLink.addEventListener('click', (e) => {
-        removeAllfliter(fliterLink);
+        removeClassAllfliter();
+        addClassAllfliter(fliterLink);
     })
 
 });

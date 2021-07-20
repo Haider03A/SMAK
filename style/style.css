@@ -592,14 +592,6 @@ header .contener .nav li:hover {
     position: relative;
 }
 
-.portfolio .nav-pic .contener .pic.show {
-    display: block;
-}
-
-.portfolio .nav-pic .contener .pic.none {
-    display: none;
-}
-
 .portfolio .nav-pic .contener .pic div img {
     width: 100%;
     height: 100%;
