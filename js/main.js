@@ -1,10 +1,7 @@
-const but = document.querySelector(".gitBut"),
-    butDonw = document.querySelector(".but-down"),
-    moves = document.querySelector(".home .content .contener"),
-    disBlock = document.querySelectorAll(".home .content .contener i:first-child, .home .content .contener i:last-child"),
+const disBlock = document.querySelectorAll(".home .content .contener i:first-child, .home .content .contener i:last-child"),
     bergherIcon = document.querySelector("header .berger-icon"),
-    showNav = document.querySelector("header .nav"),
 
+    showNav = document.querySelector("header .nav"),
     clickToShowDisc = document.querySelectorAll('.the-team .contener .conten-and-img .content .nema'),
     discrpt = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript'),
     clickExitIcon = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript .exit-icon');
@@ -23,53 +20,57 @@ bergherIcon.onclick = function () {
         }
     });
 
-
 };
 
-const links = document.querySelectorAll("header .nav li");
+const sections = document.querySelectorAll('body section'),
+    links = document.querySelectorAll("header .nav li"),
+    header = document.querySelector("header");
+
 links.forEach(link => {
     link.addEventListener('click', (e) => {
-        links.forEach(allLinks => {
-            allLinks.classList.remove('active');
-
-        });
-        if (link.classList.contains('active')) {
-            // link.classList.remove('active');
-
-        } else {
-            link.classList.add('active');
-
-        };
-
-    });
-
+        let atrValue = link.attributes.dataGo.value,
+            theElement = document.querySelector(`.${atrValue}`),
+            topOfElement = theElement.offsetTop - header.offsetHeight;
+        scrollTo(0, topOfElement);
+    })
 });
 
-but.onmouseover = function () {
-    but.classList.add("borderDisplay");
-},
+let drop = document.querySelector(".services .up .contener .our-services .drop");
 
-    but.onmouseout = function () {
-        but.classList.remove("borderDisplay");
-    };
+drop.onclick = function () {
+    let atrValue = this.attributes.dataGo.value,
+        theElement = document.querySelector(`.${atrValue}`),
+        topOfElement = theElement.offsetTop - header.offsetHeight;
+    scrollTo(0, topOfElement);
+}
 
-moves.onmouseover = function () {
-    disBlock[0].classList.add('show');
-    disBlock[1].classList.add('show');
-},
+onscroll = function () {
+    let positionScroll = document.documentElement.scrollTop;
+    if (positionScroll >= sections[0].offsetHeight / 2) {
+        header.classList.remove('main-scroll');
+    } else {
+        header.classList.add('main-scroll');
+    }
+    sections.forEach(section => {
+        if (positionScroll >= section.offsetTop - section.offsetHeight * 0.30 && positionScroll < section.offsetTop + section.offsetHeight - section.offsetHeight * 0.30) {
+            let iiii = section.attributes.id.value;
+            removeActiveAllClass();
+            addActiveClass(iiii);
+        }
+    });
+};
 
-    moves.onmouseout = function () {
-        disBlock[0].classList.remove('show');
-        disBlock[1].classList.remove('show');
-    };
+removeActiveAllClass = function () {
+    links.forEach(link => {
+        link.classList.remove('active')
+    });
+};
 
-butDonw.onmouseover = function () {
-    butDonw.classList.add("border-down");
-},
+addActiveClass = function (id) {
+    selector = document.querySelector(`.nav li[dataGo="${id}"]`)
+    selector.classList.add('active');
 
-    butDonw.onmouseout = function () {
-        butDonw.classList.remove("border-down");
-    };
+}
 
 // Start We Are Proud
 const contBoxAll = document.querySelectorAll('.portfolio .we-are-proud .contener .box .cont-box h1'),
@@ -101,6 +102,27 @@ function funcContBoxAll() {
 };
 
 // End We Are Proud
+
+// Start Portfolio
+
+const fliterLinks = document.querySelectorAll('.portfolio .nav-pic .contener .text-playlist li');
+
+
+removeAllfliter = function (fliterLink) {
+
+
+    let pics = document.querySelectorAll(`.portfolio .nav-pic .contener .pic div[data-fliter="${fliterLink.getAttribute('data-fliter',)}"]`);
+    
+}
+
+fliterLinks.forEach(fliterLink => {
+    fliterLink.addEventListener('click', (e) => {
+        removeAllfliter(fliterLink);
+    })
+
+});
+
+// End Portfolio
 
 // Start The Team
 clickToShowDisc.forEach(clickDisc => {

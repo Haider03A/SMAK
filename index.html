@@ -32,12 +32,12 @@
             </div>
             <!-- <i class="icon-bars icon"></i> -->
             <ul class="nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#clients">Clients</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active" dataGo="home">Home</li>
+                <li dataGo="services">Services</li>
+                <li dataGo="portfolio">Portfolio</li>
+                <li dataGo="about">About</li>
+                <li dataGo="clients">Clients</li>
+                <li dataGo="contact">Contact</li>
             </ul>
             <div class="berger-icon">
                 <span class="line1"></span>
@@ -46,15 +46,15 @@
             </div>
         </div>
     </header>
-    <section class="home">
+    <section id="home" class="home">
         <div class="content">
             <div class="contener">
-                <i class="icon-angle-left moveLeft"></i>
+                <i class="icon-angle-left"></i>
                 <div class="text">
                     <p>BRANDING HAVE ANOTHER <span>DEFINITION</span></p>
-                    <button class="gitBut borderNone">Get it</button>
+                    <button class="button-click">Get it</button>
                 </div>
-                <i class="icon-angle-right moveRight"></i>
+                <i class="icon-angle-right"></i>
             </div>
         </div>
     </section>
@@ -64,7 +64,9 @@
         <div class="up">
             <div class="contener">
                 <div class="our-services">
-                    <a class="drop" href="#services">
+                    <a class="drop" dataGo="services">
+                        <i class="icon-angle-double-down"></i>
+                        <i class="icon-angle-double-down"></i>
                         <i class="icon-angle-double-down"></i>
                     </a>
                     <p>Our SERVICES</p>
@@ -188,23 +190,23 @@
             <div class="contener">
                 <ul class="text-playlist">
                     <li>
-                        <a href="#1">all</a>
+                        all
                     </li>
-                    <li>
-                        <a href="#2">web-design</a>
+                    <li data-fliter="web-design">
+                        web-design
                     </li>
-                    <li>
-                        <a href="#3">Graphic design</a>
+                    <li data-fliter="g-design">
+                        Graphic design
                     </li>
-                    <li>
-                        <a href="#4">Photography</a>
+                    <li data-fliter="Photography">
+                        Photography
                     </li>
-                    <li>
-                        <a href="#5">Illustration</a>
+                    <li data-fliter="illustraion">
+                        Illustration
                     </li>
                 </ul>
                 <div class="grid-itmes pic">
-                    <div>
+                    <div data-fliter="web-design">
                         <img src="images/c/1-thumb.jpg" alt="">
                         <div class="text">
                             <h4>Moderno</h4>
@@ -214,17 +216,17 @@
                             <p>PSD</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="g-design">
                         <img src="images/c/2-thumb.jpg" alt="">
                         <div class="text">
-                            <h4>Moderno</h4>
+                            <h4>App Screen Showcase</h4>
                             <div class="line">
                                 <span></span>
                             </div>
-                            <p>App Screen Showcase</p>
+                            <p>Moderno</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="photography">
                         <img src="images/c/3-thumb.jpg" alt="">
                         <div class="text">
                             <h4>Molly</h4>
@@ -234,7 +236,7 @@
                             <p>PSD</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="illustraion">
                         <img src="images/c/4-thumb.png" alt="">
                         <div class="text">
                             <h4>Workspace Elements</h4>
@@ -244,8 +246,8 @@
                             <p>AI / PSD</p>
                         </div>
                     </div>
-                    <div>
-                        <img src="images/c/7-thumb.png" alt="">
+                    <div data-fliter="web-design">
+                        <img src="images/c/5-thumb.png" alt="">
                         <div class="text">
                             <h4>Vintage Logo Insignias</h4>
                             <div class="line">
@@ -254,7 +256,7 @@
                             <p>AI / ESP</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="g-design">
                         <img src="images/c/6-thumb.png" alt="">
                         <div class="text">
                             <h4>Retro Vetor Badges</h4>
@@ -264,7 +266,7 @@
                             <p>AI</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="photography">
                         <img src="images/c/7-thumb.png" alt="">
                         <div class="text">
                             <h4>Mentum</h4>
@@ -274,7 +276,7 @@
                             <p>PSD</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="illustraion">
                         <img src="images/c/8-thumb.png" alt="">
                         <div class="text">
                             <h4>Flat Browser Mockup</h4>
@@ -284,7 +286,7 @@
                             <p>AI / PSD</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="web-design">
                         <img src="images/c/9-thumb.jpg" alt="">
                         <div class="text">
                             <h4>Flying Business Cards</h4>
@@ -294,7 +296,7 @@
                             <p>PSD</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="g-design">
                         <img src="images/c/10-thumb.jpg" alt="">
                         <div class="text">
                             <h4>Tri Fold Brochure</h4>
@@ -304,7 +306,7 @@
                             <p>PSD</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="photography">
                         <img src="images/c/11-thumb.png" alt="">
                         <div class="text">
                             <h4>iPhone 6 Mockups</h4>
@@ -314,7 +316,7 @@
                             <p>AI / PSD</p>
                         </div>
                     </div>
-                    <div>
+                    <div data-fliter="illustraion">
                         <img src="images/c/12-thumb.png" alt="">
                         <div class="text">
                             <h4>Large Poster Mockup</h4>
@@ -334,9 +336,9 @@
                     <h1>Do you like our portfolio?</h1>
                     <p>If I’d asked people what they wanted, they would have said a faster horse.</p>
                 </div>
-                <div class="but-down gitBut borderNone">
+                <button class="button-click">
                     Contact Us
-                </div>
+                </button>
             </div>
         </div>
         <div class="we-are-proud">
@@ -369,6 +371,8 @@
             </div>
         </div>
     </section>
+    <!-- End Portfolio -->
+    <!-- Start About -->
     <section id="about" class="about">
         <div class="contener">
             <div class="who-we-are">
@@ -578,7 +582,7 @@
             </div>
         </div>
     </section>
-    <!-- End Portfolio -->
+    <!-- End About -->
     <!-- Start Clients -->
     <section class="clients" id="clients">
         <div class="contener">
@@ -711,7 +715,7 @@
                             <textarea type="text" data-name="Your comment.." placeholder="Your comment.."></textarea>
                         </div>
                     </div>
-                    <button class="gitBut but-send">Send message</button>
+                    <button class="button-click">Send message</button>
                 </div>
             </div>
         </div>
