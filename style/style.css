@@ -592,8 +592,7 @@ header .contener .nav li:hover {
     position: relative;
     transition:  .3s;
     overflow: hidden;
-    display: inline-block;   
-    /* hayd */
+    display: inline-block;
 }
 
 .portfolio .nav-pic .contener .pic.show {
