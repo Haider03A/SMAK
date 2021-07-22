@@ -164,8 +164,9 @@ fliterLinks.forEach(fliterLink => {
         addCalssActive(fliterLink)
         removeClassAllfliter();
         addClassAllfliter(fliterLink);
+        addCalssActive(fliterLink);
     })
-    addCalssActive(fliterLink);
+    
 });
 
 // End Portfolio

@@ -255,7 +255,7 @@ header .contener .nav li:hover {
 .home .content {
     width: 100%;
     background-image: url('../images/a/patern.png');
-    overflow: hidden;
+    
 }
 
 .home .content .contener {
@@ -288,24 +288,33 @@ header .contener .nav li:hover {
 }
 
 .home .content .contener .text {
+    display: flex;
+    
+    width: 100%;
+}
+
+.home .content .contener .text .text-cont {
+    width: 100%;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    background: #fff;
+    
 }
 
-.home .content .contener .text p {
+.home .content .contener .text .text-cont p {
     color: #fff;
     font-size: 65px;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
-.home .content .contener .text p span {
+.home .content .contener .text .text-cont p span {
     display: block;
 }
 
 @media (max-width: 720px) {
-    .home .content .contener .text p {
+    .home .content .contener .text .text-cont p {
         font-size: 2em;
     }
     .home .content .contener i:first-child {
