@@ -298,7 +298,6 @@ header .contener .nav li:hover {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
-    background: #fff;
     
 }
 
@@ -1472,15 +1471,18 @@ transition: .3s;
     left: 0px;
     font-size: 15px;
     opacity: 0;
-    color: #FFF;
-    z-index: -1;
-    /* transform: translateY(-37px); */
+    color: #5d5d5d;
+    z-index: 2;
     transition: .3s;
+    pointer-events: none;
+    background: #fee600;
+    padding: 0px 7px;
+    border-radius: 2px;
 }
 
 .contact .the-form .contener .forms .down textarea {
     margin-top: 5px !important;
-    min-width: 183px;
+    min-width: 100%;
     max-width: 100%;
     width: 100%;
     height: 190px;
@@ -1494,10 +1496,13 @@ transition: .3s;
     left: 0px;
     font-size: 15px;
     opacity: 0;
-    color: #FFF;
-    z-index: -1;
-    /* transform: translateY(-37px); */
+    color: #5d5d5d;
+    z-index: 2;
     transition: .3s;
+    pointer-events: none;
+    background: #fee600;
+    padding: 0px 7px;
+    border-radius: 2px;
 }
 
 .contact .the-form .contener .forms .up input:focus,
@@ -1505,12 +1510,13 @@ transition: .3s;
     outline: none;
 }
 
-.contact .the-form .contener .forms .up .focus,
-.contact .the-form .contener .forms .down .focus {
+.contact .the-form .contener .forms .up div .focus,
+.contact .the-form .contener .forms .down div .focus {
     background-color: #ffffff1a;
     border-color: #FEE600;
     box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
 }
+
 
 .contact .the-form .contener .forms .button-click {
     margin-top: 40px;
@@ -1526,6 +1532,13 @@ transition: .3s;
 .contact .the-form .contener .forms .down .placeholder {
     color: #fff;
     
+}
+
+@media (max-width:250px) {
+    .contact .the-form .contener .forms .up div p,
+    .contact .the-form .contener .forms .down div p {
+        font-size: 10px;
+    }
 }
 /* End Contact */
 /* Start footer */

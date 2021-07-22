@@ -166,7 +166,7 @@ fliterLinks.forEach(fliterLink => {
         addClassAllfliter(fliterLink);
         addCalssActive(fliterLink);
     })
-    
+
 });
 
 // End Portfolio
@@ -348,32 +348,74 @@ theButton.forEach(i => {
 });
 // End We Keep
 // Start Input
-const input = document.querySelectorAll('.contact .the-form .contener .forms .up input');
-input.forEach(i => {
-    i.addEventListener('click', (e) => {
-        input.forEach(ii => {
-            if (ii !== ' ') {
+const inputsUp = document.querySelectorAll('.contact .the-form .contener .forms .up input');
 
-            } else {
-                ii.setAttribute('placeholder', `${ii.getAttribute('data-name')}`);
-            }
-        });
-        if (i === document.activeElement || i !== '') {
+removeAllClassFocus = function () {
+    inputsUp.forEach(input => {
+        if (input !== document.activeElement && input.value == ``) {
+            input.classList.remove('focus');
+            input.parentElement.firstElementChild.style.opacity = null;
+            input.parentElement.firstElementChild.style.transform = null;
+        }
+
+    });
+};
+
+removeAllStyleFocus = function () {
+    inputsUp.forEach(input => {
+        if (input !== document.activeElement && input.value == ` `) {
+            input.parentElement.firstElementChild.style.opacity = null;
+            input.parentElement.firstElementChild.style.transform = null;
+        }
+
+    });
+};
+
+
+addAllClassFocus = function (input) {
+    input.classList.add('focus');
+    input.parentElement.firstElementChild.style.opacity = '1';
+    input.parentElement.firstElementChild.style.transform = 'translate( 10px,-22px)';
+};
+
+
+inputsUp.forEach((input) => {
+    input.addEventListener('click', function () {
+        removeAllClassFocus();
+        addAllClassFocus(input);
+
+
+    });
+    input.addEventListener('blur', function () {
+        removeAllClassFocus();
+    });
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* input.forEach(i => {
+
+    i.addEventListener('click', (e) => {
+
+        if (i === document.activeElement || i !== ' ') {
             i.classList.add('focus');
             i.setAttribute('placeholder', '')
             i.parentElement.firstElementChild.style.opacity = '1';
-            i.parentElement.firstElementChild.style.transform = 'translateY(-33px)';
+            i.parentElement.firstElementChild.style.transform = 'translate( 10px,-22px)';
 
         }
-    });
-    input.forEach(iii => {
-        addEventListener('click', (ee) => {
-            if (iii !== document.activeElement) {
-                iii.classList.remove('focus');
-                iii.parentElement.firstElementChild.style = null;
-                iii.setAttribute('placeholder', `${iii.getAttribute('data-name')}`);
-            }
-        });
     });
 });
 
@@ -391,7 +433,7 @@ textarea.forEach(i => {
             i.setAttribute('placeholder', '')
             i.classList.add('focus')
             i.parentElement.firstElementChild.style.opacity = '1';
-            i.parentElement.firstElementChild.style.transform = 'translateY(-33px)';
+            i.parentElement.firstElementChild.style.transform = 'translate( 10px,-17px)';
         }
     });
     textarea.forEach(iii => {
@@ -403,5 +445,5 @@ textarea.forEach(i => {
             }
         });
     });
-});
+}); */
 // End Input
