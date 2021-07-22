@@ -352,11 +352,12 @@ const inputsUp = document.querySelectorAll('.contact .the-form .contener .forms 
 
 removeAllClassFocus = function () {
     inputsUp.forEach(input => {
-        if (input !== document.activeElement && input.value == ``) {
+        if (input !== document.activeElement && input.value.replace(/\s/g,'').length <= 0){
             input.classList.remove('focus');
             input.parentElement.firstElementChild.style.opacity = null;
             input.parentElement.firstElementChild.style.transform = null;
-        }
+            input.value = input.value.replace(/ /g,'')
+        };
 
     });
 };
@@ -393,7 +394,11 @@ inputsUp.forEach((input) => {
 });
 
 
+const textareas = document.querySelectorAll('.contact .the-form .contener .forms .down textarea');
 
+textareas.forEach(textarea => {
+    
+    })
 
 
 
