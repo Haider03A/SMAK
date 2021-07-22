@@ -584,6 +584,11 @@ header .contener .nav li:hover {
     color: #f3e8e8;
 }
 
+.portfolio .nav-pic .contener .text-playlist li.active {
+    background-color: #343860;
+    color: #f3e8e8;
+}
+
 .portfolio .nav-pic .contener .pic {
     grid-gap: 0px;
 }

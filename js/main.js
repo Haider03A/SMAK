@@ -117,9 +117,13 @@ removeClassAllfliter = function () {
         }, 200);
 
     });
+
 };
 
+
+
 addClassAllfliter = function (fliterLink) {
+
     let linkDataFliter = fliterLink.getAttribute('data-fliter',);
     let dataFliterFinish = '';
 
@@ -137,14 +141,31 @@ addClassAllfliter = function (fliterLink) {
             pic.style.display = 'block';
         }, 200);
     });
+
+};
+
+addCalssActive = function (fliterLink) {
+
+    // Remove Class Active From All Li
+    fliterLinks.forEach(fliterLink => {
+        fliterLink.classList.remove('active')
+    });
+
+    let linkDataFliter = fliterLink.getAttribute('data-fliter',);
+
+    // Add Calss Active On Li
+    let filterLi = document.querySelector(`.portfolio .nav-pic .contener .text-playlist li[data-fliter="${linkDataFliter}"`)
+    filterLi.classList.add('active');
+
 };
 
 fliterLinks.forEach(fliterLink => {
     fliterLink.addEventListener('click', (e) => {
+        addCalssActive(fliterLink)
         removeClassAllfliter();
         addClassAllfliter(fliterLink);
     })
-
+    addCalssActive(fliterLink);
 });
 
 // End Portfolio
