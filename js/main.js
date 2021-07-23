@@ -5,8 +5,6 @@ const disBlock = document.querySelectorAll(".home .content .contener i:first-chi
     clickToShowDisc = document.querySelectorAll('.the-team .contener .conten-and-img .content .nema'),
     discrpt = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript'),
     clickExitIcon = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript .exit-icon');
-
-
 bergherIcon.onclick = function () {
 
     showNav.classList.toggle('show');
@@ -87,17 +85,20 @@ function funcContBoxAll() {
     }
 
     if (numContBox2 === 3200) { } else {
-        numContBox2++; contBoxAll[1].textContent = `${numContBox2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+        numContBox2++;
+        contBoxAll[1].textContent = `${numContBox2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
     }
 
     if (numContBox3 === 40) { } else {
-        numContBox3++; contBoxAll[2].textContent = `${numContBox3.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+        numContBox3++;
+        contBoxAll[2].textContent = `${numContBox3.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
     }
 
     if (numContBox4 === 20000) {
         clearInterval(timeContBoxAll);
     } else {
-        numContBox4++; contBoxAll[3].textContent = `${numContBox4.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+        numContBox4++;
+        contBoxAll[3].textContent = `${numContBox4.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
     }
 };
 
@@ -288,10 +289,7 @@ var Span4Num = 0,
 function span4Func() {
 
     setTimeout(function () {
-        if (Span4Num >= 94) {
-
-
-        } else {
+        if (Span4Num >= 94) { } else {
             Span4Num++;
             span4.textContent = `${Span4Num + '%'}`;
             // console.log(span3);
@@ -305,8 +303,10 @@ function span4Func() {
         stroke4.style.strokeDasharray = `${stroke4Num + 1}% 298%`;
     };
 };
+
 // End About Skills
 // Start Our Clients
+
 const logosMoveing = document.querySelector('.clients .contener .down .logos'),
     logosMoveLeft = document.querySelector('.clients .contener .down .clikes .move-to-left'),
     logosMoveRigth = document.querySelector('.clients .contener .down .clikes .move-to-right');
@@ -318,8 +318,10 @@ logosMoveLeft.addEventListener('click', (e) => {
 logosMoveRigth.addEventListener('click', (e) => {
     logosMoveing.style.transform = `translateX(${num -= numMove}px)`;
 });
+
 // End Our Clients
 // Start We Keep
+
 const theText = document.querySelectorAll('.clients .we-keep .contener .content-texts .the-text'),
     theButton = document.querySelectorAll('.clients .we-keep .contener .the-circle span');
 theButton.forEach(i => {
@@ -346,111 +348,65 @@ theButton.forEach(i => {
         }
     });
 });
+
 // End We Keep
 // Start Input
-const inputsUp = document.querySelectorAll('.contact .the-form .contener .forms .up input');
 
-removeAllClassFocus = function () {
-    inputsUp.forEach(input => {
-        if (input !== document.activeElement && input.value.replace(/\s{0,}/,'') <= 0){
+// All Functions
+mainRemover = function (inputs) {
+    inputs.forEach(input => {
+        if (input !== document.activeElement && input.value.replace(/\s{0,}/, '') <= 0) {
             input.classList.remove('focus');
-            input.parentElement.firstElementChild.style.opacity = null;
-            input.parentElement.firstElementChild.style.transform = null;
-            input.value = input.value.replace(/\s{0,}/g,'')
+            removeAllStyleFocus(input);
+            input.value = input.value.replace(/\s{0,}/g, '')
         } else {
-            input.value = input.value.replace(/\s{0,}/   ,'')
+            input.classList.remove('focus');
+            input.value = input.value.replace(/\s{0,}/, '')
         }
-
     });
 };
 
-removeAllStyleFocus = function () {
-    inputsUp.forEach(input => {
-        if (input !== document.activeElement && input.value == ` `) {
-            input.parentElement.firstElementChild.style.opacity = null;
-            input.parentElement.firstElementChild.style.transform = null;
-        }
-
-    });
-};
-
-
-addAllClassFocus = function (input) {
+mainAdder = function (input) {
     input.classList.add('focus');
+};
+
+removeAllStyleFocus = function (input) {
+    input.parentElement.firstElementChild.style.opacity = null;
+    input.parentElement.firstElementChild.style.transform = null;
+};
+
+addStyleFocus = function (input) {
     input.parentElement.firstElementChild.style.opacity = '1';
     input.parentElement.firstElementChild.style.transform = 'translate( 10px,-22px)';
 };
 
-
+// inputsUp
+const inputsUp = document.querySelectorAll('.contact .the-form .contener .forms .up input');
 inputsUp.forEach((input) => {
     input.addEventListener('click', function () {
-        removeAllClassFocus();
-        addAllClassFocus(input);
-
-
+        mainRemover(inputsUp);
+        mainAdder(input);
+        addStyleFocus(input);
     });
+
     input.addEventListener('blur', function () {
-        removeAllClassFocus();
+        mainRemover(inputsUp);
     });
 
 });
 
+// inputsDown
+const textareasDown = document.querySelectorAll('.contact .the-form .contener .forms .down textarea');
+textareasDown.forEach(textarea => {
+    textarea.addEventListener('click', function () {
+        mainRemover(textareasDown);
+        mainAdder(textarea);
+        addStyleFocus(textarea);
+    });
 
-const textareas = document.querySelectorAll('.contact .the-form .contener .forms .down textarea');
-
-textareas.forEach(textarea => {
-    
-    })
-
-
-
-
-
-
-
-
-
-
-
-/* input.forEach(i => {
-
-    i.addEventListener('click', (e) => {
-
-        if (i === document.activeElement || i !== ' ') {
-            i.classList.add('focus');
-            i.setAttribute('placeholder', '')
-            i.parentElement.firstElementChild.style.opacity = '1';
-            i.parentElement.firstElementChild.style.transform = 'translate( 10px,-22px)';
-
-        }
+    textarea.addEventListener('blur', function () {
+        mainRemover(textareasDown);
     });
 });
 
-const textarea = document.querySelectorAll('.contact .the-form .contener .forms .down textarea');
-textarea.forEach(i => {
-    i.addEventListener('click', (e) => {
-        textarea.forEach(ii => {
-            if (ii !== ' ') {
-
-            } else {
-                ii.setAttribute('placeholder', `${ii.getAttribute('data-name')}`);
-            }
-        });
-        if (i === document.activeElement || i !== '') {
-            i.setAttribute('placeholder', '')
-            i.classList.add('focus')
-            i.parentElement.firstElementChild.style.opacity = '1';
-            i.parentElement.firstElementChild.style.transform = 'translate( 10px,-17px)';
-        }
-    });
-    textarea.forEach(iii => {
-        addEventListener('click', (ee) => {
-            if (iii !== document.activeElement) {
-                iii.classList.remove('focus')
-                iii.parentElement.firstElementChild.style = null;
-                iii.setAttribute('placeholder', `${iii.getAttribute('data-name')}`);
-            }
-        });
-    });
-}); */
 // End Input
