@@ -176,20 +176,15 @@ fliterLinks.forEach(fliterLink => {
 clickToShowDisc.forEach(clickDisc => {
     clickDisc.addEventListener('click', (e) => {
         let elmeDisc = e.target.parentElement.lastElementChild;
-        elmeDisc.style.zIndex = '1';
-        elmeDisc.style.top = '100%';
+        elmeDisc.classList.add('show');
     });
 }),
 
     clickExitIcon.forEach(clickExit => {
         clickExit.addEventListener('click', (e) => {
             let reAfter = document.querySelectorAll('.the-team .contener .conten-and-img .content .nema');
-            reAfter.forEach(after => {
-                // after.classList.remove('after');
-            });
             let reDisc = clickExit.parentElement;
-            reDisc.style.zIndex = '-1';
-            reDisc.style.top = '0%';
+            reDisc.classList.remove('show');
         });
     });
 // End The Team
