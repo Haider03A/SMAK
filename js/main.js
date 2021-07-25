@@ -306,12 +306,12 @@ const logosMoveing = document.querySelector('.clients .contener .down .logos'),
     logosMoveLeft = document.querySelector('.clients .contener .down .clikes .move-to-left'),
     logosMoveRigth = document.querySelector('.clients .contener .down .clikes .move-to-right');
 let num = 0,
-    numMove = 250;
+    numMove = 100;
 logosMoveLeft.addEventListener('click', (e) => {
-    logosMoveing.style.transform = `translateX(${num += numMove}px)`;
+    logosMoveing.style.transform = `translateX(${num += numMove}%)`;
 });
 logosMoveRigth.addEventListener('click', (e) => {
-    logosMoveing.style.transform = `translateX(${num -= numMove}px)`;
+    logosMoveing.style.transform = `translateX(${num -= numMove}%)`;
 });
 
 // End Our Clients

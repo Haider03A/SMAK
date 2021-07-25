@@ -268,6 +268,8 @@ header .contener .nav li:hover {
 
 .home .content .contener {
     position: relative;
+    overflow-x: hidden; 
+    
 }
 
 .home .content .contener i {
@@ -296,15 +298,21 @@ header .contener .nav li:hover {
 }
 
 .home .content .contener .text {
-    display: flex;
-    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 100%);
+    transform: translateX(-100%);
+    
 }
 
 .home .content .contener .text .text-cont {
-    width: 100%;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    
+}
+
+.home .content .contener .text .text-cont:last-child {
+    
 }
 
 .home .content .contener .text .text-cont p {
@@ -312,6 +320,8 @@ header .contener .nav li:hover {
     font-size: 65px;
     font-weight: bold;
     margin-bottom: 20px;
+    
+
 }
 
 .home .content .contener .text .text-cont p span {
@@ -1219,20 +1229,19 @@ header .contener .nav li:hover {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow-x: hidden; 
+
 }
 
 .clients .contener .down .logos {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: baseline;
+    display: grid;
+    grid-template-columns: repeat(7, calc(100% / 3));
     transition: .3s;
+    
 }
 
 .clients .contener .down .logos img {
-    width: 190px;
-    margin: 0px 10px;
+    width: 100%;
     -webkit-filter: grayscale(100%);
     /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
@@ -1302,13 +1311,15 @@ header .contener .nav li:hover {
     top: 0px;
     left: 50%;
     width: 100%;
-    transform: scale(0) translateX(-50%);
+    margin-left: -50%;
+    transform: scale(0) ;
     opacity: 0;
 }
 
 .we-keep .contener .content-texts .show {
-    transform: scale(1) translateX(-50%);
+    transform: scale(1);
     opacity: 1;
+    
 }
 
 .we-keep .contener .content-texts .the-text p:first-child {
