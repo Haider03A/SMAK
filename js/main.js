@@ -81,24 +81,24 @@ let numContBox4 = 18500;
 function funcContBoxAll() {
     if (numContBox1 === 1600) { } else {
         numContBox1++;
-        contBoxAll[0].textContent = `${numContBox1.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+        contBoxAll[0].textContent = `${numContBox1.toLocaleString('en-GB')}`;
     }
 
     if (numContBox2 === 3200) { } else {
         numContBox2++;
-        contBoxAll[1].textContent = `${numContBox2.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+        contBoxAll[1].textContent = `${numContBox2.toLocaleString('en-GB')}`;
     }
 
     if (numContBox3 === 40) { } else {
         numContBox3++;
-        contBoxAll[2].textContent = `${numContBox3.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+        contBoxAll[2].textContent = `${numContBox3.toLocaleString('en-GB')}`;
     }
 
     if (numContBox4 === 20000) {
         clearInterval(timeContBoxAll);
     } else {
         numContBox4++;
-        contBoxAll[3].textContent = `${numContBox4.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
+        contBoxAll[3].textContent = `${numContBox4.toLocaleString('en-GB')}`;
     }
 };
 

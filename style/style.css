@@ -298,8 +298,7 @@ header .contener .nav li:hover {
 }
 
 .home .content .contener .text {
-    display: grid;
-    grid-template-columns: repeat(2, 100%);
+    display: flex;
     transform: translateX(-100%);
     
 }
@@ -308,11 +307,12 @@ header .contener .nav li:hover {
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    min-width: 100%;
     
 }
 
 .home .content .contener .text .text-cont:last-child {
-    
+
 }
 
 .home .content .contener .text .text-cont p {
