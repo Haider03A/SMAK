@@ -111,11 +111,9 @@ const fliterLinks = document.querySelectorAll('.portfolio .nav-pic .contener .te
 
 removeClassAllfliter = function () {
     pics.forEach(pic => {
-        pic.style.transform = 'scale(0)';
-        pic.style.opacty = '0';
         setTimeout(() => {
             pic.style.display = 'none';
-        }, 200);
+        }, 0);
 
     });
 
@@ -136,11 +134,9 @@ addClassAllfliter = function (fliterLink) {
 
     let pics = document.querySelectorAll(`.portfolio .nav-pic .contener .pic > ${dataFliterFinish}`);
     pics.forEach(pic => {
-        pic.style.transform = 'scale(1)';
-        pic.style.opacty = '1';
         setTimeout(() => {
             pic.style.display = 'block';
-        }, 200);
+        }, 0);
     });
 
 };

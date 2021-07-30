@@ -1,5 +1,16 @@
+/* 
+@media (max-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {} 
+*/
+
 :root {
     --margin-bprder-botton: 18px;
+    --filter-bag: #0000008c;
 }
 
 *,
@@ -251,7 +262,7 @@ header .contener .nav li:hover {
 /* Start Home */
 
 .home {
-    background-image: url("../images/a/bg02.jpg");
+    background: #eac335 url("../images/a/bg02.jpg");
     height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
@@ -263,7 +274,18 @@ header .contener .nav li:hover {
 
 .home .content {
     width: 100%;
-    background-image: url('../images/a/patern.png');
+    background: url('../images/a/patern.png');
+    position: relative;
+}
+
+.home .content::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: var(--filter-bag);
 }
 
 .home .content .contener {
@@ -309,10 +331,6 @@ header .contener .nav li:hover {
     padding-bottom: 20px;
     min-width: 100%;
     
-}
-
-.home .content .contener .text .text-cont:last-child {
-
 }
 
 .home .content .contener .text .text-cont p {
@@ -484,9 +502,19 @@ header .contener .nav li:hover {
     position: relative;
 }
 
+.services .down::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: var(--filter-bag);
+}
+
 .services .down .bag-down div {
     position: absolute;
-    background: url('../images/a/how-we-do-it.jpg') black;
+    background: url('../images/a/how-we-do-it.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -496,7 +524,7 @@ header .contener .nav li:hover {
 
 .services .down .bag-up div {
     position: absolute;
-    background-image: url('../images/a/patern.png');
+    background: url('../images/a/patern.png');
     background-repeat: repeat;
     width: 100%;
     height: 100%;
@@ -506,6 +534,8 @@ header .contener .nav li:hover {
 .services .down .contener {
     padding-bottom: 50px;
     color: #fff;
+    position: relative;
+    z-index: 1;
 }
 
 .services .down .contener .how-we {
@@ -747,8 +777,20 @@ header .contener .nav li:hover {
     position: relative;
 }
 
+.portfolio .we-are-proud::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: var(--filter-bag);
+}
+
 .portfolio .we-are-proud .contener {
     padding-bottom: 50px;
+    position: relative;
+    z-index: 1;
 }
 
 .portfolio .we-are-proud .bag-down,
@@ -904,6 +946,11 @@ header .contener .nav li:hover {
 
 .about .the-team .contener .text p {
     color: #707070;
+}
+
+.about .the-team .contener .conten-and-img {
+    position: relative;
+    z-index: 2;
 }
 
 .about .the-team .contener .conten-and-img .content {
@@ -1081,6 +1128,16 @@ header .contener .nav li:hover {
     position: relative;
 }
 
+.about .skills::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: var(--filter-bag);
+}
+
 .about .skills .bg-down,
 .about .skills .bg-up {
     position: absolute;
@@ -1100,6 +1157,11 @@ header .contener .nav li:hover {
 .about .skills .bg-up {
     background: url('../images/a/patern.png');
     background-repeat: repeat;
+}
+
+.about .skills .contener {
+    position: relative;
+    z-index: 1;
 }
 
 .about .skills .contener .text {
@@ -1240,6 +1302,12 @@ header .contener .nav li:hover {
     
 }
 
+@media (min-width:768px) {
+    .clients .contener .down .logos {
+        grid-template-columns: repeat(7, calc(100% / 6));
+    }  
+}
+
 .clients .contener .down .logos img {
     width: 100%;
     -webkit-filter: grayscale(100%);
@@ -1273,6 +1341,16 @@ header .contener .nav li:hover {
     height: 200px;
 }
 
+.we-keep::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: var(--filter-bag);
+}
+
 .we-keep .bag-down,
 .we-keep .bag-up {
     position: absolute;
@@ -1296,6 +1374,8 @@ header .contener .nav li:hover {
 
 .we-keep .contener {
     height: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .we-keep .contener .content-texts {
@@ -1311,13 +1391,11 @@ header .contener .nav li:hover {
     top: 0px;
     left: 50%;
     width: 100%;
-    margin-left: -50%;
-    transform: scale(0) ;
+    transform: translateX(-50%);
     opacity: 0;
 }
 
 .we-keep .contener .content-texts .show {
-    transform: scale(1);
     opacity: 1;
     
 }
@@ -1418,8 +1496,17 @@ header .contener .nav li:hover {
     user-select: none;
 }
 
+.contact .the-form::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: var(--filter-bag);
+}
+
 .contact .the-form .bag-down,
-.contact .the-form .bag-black,
 .contact .the-form .bag-up {
     position: absolute;
     height: 100%;
@@ -1430,19 +1517,16 @@ header .contener .nav li:hover {
 }
 
 .contact .the-form .bag-down {
-    background-image: url('../images/a/contact-us.jpg');
+    background: url('../images/a/contact-us.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .contact .the-form .bag-up {
-    background-image: url('../images/a/patern.png');
+    background: url('../images/a/patern.png');
     background-repeat: repeat;
 }
 
-.contact .the-form .bag-black {
-    background-color: #0000008c;
-}
 
 .contact .the-form .contener {
     margin-bottom: 0px;
