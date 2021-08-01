@@ -1,23 +1,26 @@
-const disBlock = document.querySelectorAll(".home .content .contener i:first-child, .home .content .contener i:last-child"),
+const showNav = document.querySelector("header .nav"),
+    bergherIcon = document.querySelector("header .berger-icon"),
+    sections = document.querySelectorAll('body section'),
+    links = document.querySelectorAll("header .nav li"),
+    header = document.querySelector("header");
 
-    clickToShowDisc = document.querySelectorAll('.the-team .contener .conten-and-img .content .nema'),
-    discrpt = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript'),
-    clickExitIcon = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript .exit-icon'),
-
-    showNav = document.querySelector("header .nav"),
-    bergherIcon = document.querySelector("header .berger-icon");
-bergherIcon.onclick = function (e) {
-    e.stopPropagation();
-    showNav.classList.toggle('show');
-    bergherIcon.classList.toggle('berger-toggle');
+addOrRemoveStyleAndClass = function (addOrRemove) {
     links.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = '';
+        if (addOrRemove == 'remove') {
+            showNav.classList.remove('show');
+            bergherIcon.classList.remove('berger-toggle');
+            link.style.animation = null;
         } else {
+            showNav.classList.add('show');
+            bergherIcon.classList.add('berger-toggle');
             link.style.animation = `link-move .5s ease forwards ${index / 7}s`;
         }
     });
+}
 
+bergherIcon.onclick = function (e) {
+    e.stopPropagation();
+    (this.classList.contains('berger-toggle')) ? addOrRemoveStyleAndClass('remove') : addOrRemoveStyleAndClass('add');
 };
 
 showNav.onclick = function (e) {
@@ -25,18 +28,12 @@ showNav.onclick = function (e) {
 }
 
 document.addEventListener('click', (e) => {
-    if (e.target !== bergherIcon && e.target !== showNav) {
-        showNav.classList.remove('show');
-        bergherIcon.classList.remove('berger-toggle');
-    }
+    (e.target !== bergherIcon && e.target !== showNav) ? addOrRemoveStyleAndClass('remove') : '';
 });
-
-const sections = document.querySelectorAll('body section'),
-    links = document.querySelectorAll("header .nav li"),
-    header = document.querySelector("header");
 
 links.forEach(link => {
     link.addEventListener('click', (e) => {
+        addOrRemoveStyleAndClass('remove');
         let atrValue = link.attributes.dataGo.value,
             theElement = document.querySelector(`.${atrValue}`),
             topOfElement = theElement.offsetTop - header.offsetHeight;
@@ -61,7 +58,8 @@ onscroll = function () {
         header.classList.add('main-scroll');
     }
     sections.forEach(section => {
-        if (positionScroll >= section.offsetTop - section.offsetHeight * 0.30 && positionScroll < section.offsetTop + section.offsetHeight - section.offsetHeight * 0.30) {
+        if (positionScroll >= section.offsetTop - section.offsetHeight * 0.30
+            && positionScroll < section.offsetTop + section.offsetHeight - section.offsetHeight * 0.30) {
             let iiii = section.attributes.id.value;
             removeActiveAllClass();
             addActiveClass(iiii);
@@ -180,6 +178,8 @@ fliterLinks.forEach(fliterLink => {
 // End Portfolio
 
 // Start The Team
+const clickToShowDisc = document.querySelectorAll('.the-team .contener .conten-and-img .content .nema'),
+    clickExitIcon = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript .exit-icon');
 clickToShowDisc.forEach(clickDisc => {
     clickDisc.addEventListener('click', (e) => {
         let elmeDisc = e.target.parentElement.lastElementChild;
