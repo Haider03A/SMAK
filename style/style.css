@@ -320,8 +320,10 @@ header .contener .nav li:hover {
 }
 
 .home .content .contener .text {
-    display: flex;
-    transform: translateX(-100%);
+    display: grid;
+    transform: translateX(0%);
+    grid-template-columns: repeat(2, 100%);
+    grid-gap: 15px;
     
 }
 
@@ -411,7 +413,7 @@ header .contener .nav li:hover {
     color: rgb(255, 255, 255);
     line-height: 60px;
     display: block;
-    transform: translateY(-120px);
+    transform: translateY(-200%);
     transition: .3s;
 }
 
@@ -1491,6 +1493,12 @@ header .contener .nav li:hover {
     color: #707070;
 }
 
+@media (max-width: 300px) {
+    .contact .contener .call div p {
+        font-size: 10px;
+    }
+}
+
 .contact .the-form {
     position: relative;
     user-select: none;
@@ -1708,7 +1716,6 @@ footer .contener .media {
 
 footer .contener .media li {
     list-style-type: none;
-    padding: 10px;
 }
 
 footer .contener .media li a {
