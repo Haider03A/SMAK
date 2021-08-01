@@ -1,15 +1,15 @@
 const disBlock = document.querySelectorAll(".home .content .contener i:first-child, .home .content .contener i:last-child"),
-    bergherIcon = document.querySelector("header .berger-icon"),
 
-    showNav = document.querySelector("header .nav"),
     clickToShowDisc = document.querySelectorAll('.the-team .contener .conten-and-img .content .nema'),
     discrpt = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript'),
-    clickExitIcon = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript .exit-icon');
-bergherIcon.onclick = function () {
+    clickExitIcon = document.querySelectorAll('.the-team .contener .conten-and-img .content .descript .exit-icon'),
 
+    showNav = document.querySelector("header .nav"),
+    bergherIcon = document.querySelector("header .berger-icon");
+bergherIcon.onclick = function (e) {
+    e.stopPropagation();
     showNav.classList.toggle('show');
     bergherIcon.classList.toggle('berger-toggle');
-
     links.forEach((link, index) => {
         if (link.style.animation) {
             link.style.animation = '';
@@ -19,6 +19,17 @@ bergherIcon.onclick = function () {
     });
 
 };
+
+showNav.onclick = function (e) {
+    e.stopPropagation();
+}
+
+document.addEventListener('click', (e) => {
+    if (e.target !== bergherIcon && e.target !== showNav) {
+        showNav.classList.remove('show');
+        bergherIcon.classList.remove('berger-toggle');
+    }
+});
 
 const sections = document.querySelectorAll('body section'),
     links = document.querySelectorAll("header .nav li"),
