@@ -207,6 +207,15 @@ header .contener .nav li:hover {
     color: #eac335;
 }
 
+@media (max-height: 470px) {
+    header {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: #00000087 !important;
+    }
+}
+
 @media (max-width: 768px) {
     header .contener .nav {
         position: absolute;
@@ -346,6 +355,12 @@ header .contener .nav li:hover {
 
 .home .content .contener .text .text-cont p span {
     display: block;
+}
+
+@media (max-height: 470px) {
+    .home {
+        height: 470px;
+    }
 }
 
 @media (max-width: 720px) {
