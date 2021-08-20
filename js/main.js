@@ -58,8 +58,8 @@ onscroll = function () {
         header.classList.add('main-scroll');
     }
     sections.forEach(section => {
-        if (positionScroll >= section.offsetTop - section.offsetHeight * 0.30
-            && positionScroll < section.offsetTop + section.offsetHeight - section.offsetHeight * 0.30) {
+        if (positionScroll >= section.offsetTop - 300
+            && positionScroll < section.offsetTop + section.offsetHeight - 400) {
             let iiii = section.attributes.id.value;
             removeActiveAllClass();
             addActiveClass(iiii);
